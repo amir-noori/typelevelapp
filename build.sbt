@@ -1,6 +1,5 @@
 
 ThisBuild / version := "0.1.0-SNAPSHOT"
-lazy val rockthejvm = "com.rockthejvm"
 lazy val scala3Version = "3.2.1"
 lazy val circeVersion = "0.14.0"
 lazy val catsEffectVersion = "3.3.14"
@@ -19,7 +18,7 @@ lazy val server = (project in file("."))
   .settings(
     name := "typelevelapp",
     scalaVersion := scala3Version,
-    organization := rockthejvm,
+    organization := ".",
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-effect" % catsEffectVersion,
       "org.http4s" %% "http4s-dsl" % http4sVersion,
@@ -43,3 +42,4 @@ lazy val server = (project in file("."))
       "org.testcontainers" % "postgresql" % testContainerVersion % Test,
       "ch.qos.logback" % "logback-classic" % logbackVersion % Test
     ),
+  )
